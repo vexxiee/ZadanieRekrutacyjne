@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>zzz</title>
-</head>
-<body>
 <?php
         class Matrix {
 
@@ -57,6 +49,3 @@ class Matrix2{
     }
 }
 ?>
-</body>
-</html>
-
