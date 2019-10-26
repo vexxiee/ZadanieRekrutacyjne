@@ -1,9 +1,7 @@
 <?php
         class Matrix {
-
             private $row;
             private $col;
-
                 function __construct($row , $col){
                     $this->row=$row;
                     $this->col=$col;
@@ -12,7 +10,7 @@
                 $row = $this->row;
                 $col = $this->col;
                 print "<table class='mainTable'>";
-                print "<caption><div class='mainDiv'>Matrix A</div></caption>";
+                print "<caption>Matrix A</caption>";
                 for ($i=1; $i<=$row; $i++) {
                     print "<tr>";
                     for ($j=1; $j<=$col; $j++) {
@@ -27,7 +25,6 @@
 class Matrix2{
     private $row;
     private $col;
-
         function __construct($row , $col){
             $this->row=$row;
             $this->col=$col;
@@ -36,7 +33,7 @@ class Matrix2{
         $row = $this->row;
         $col = $this->col;
         print "<table class='mainTable1'>";
-        print "<caption><div class='mainDiv'>Matrix B</div></caption>";
+        print "<caption>Matrix B</caption>";
         for ($x=1; $x<=$row; $x++) {
             print "<tr>";
             for ($y=1; $y<=$col; $y++) {
