@@ -55,11 +55,6 @@ td {
     text-align: center;
     border: 1px solid black;
   }
-        
-p{
-    display: inline-block;
-}
-
 caption{
     font-weight: bold;
 }
