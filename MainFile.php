@@ -1,10 +1,3 @@
-<?php
-
-//if (!isset($_POST['rowA'])){
- //   header('Location: Index.html'); // jeżeli nie zostały podane wartosci dla wymiarow tabeli automatycznie przekierowywuje do pliku index.html
- //   exit();
-// }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
