@@ -20,6 +20,6 @@
                         print "<td>".($array [$i][$j] = mt_rand(0,10))."</td>";
                     }print "</tr>"; 
                 }print "</table>";
-              return ($array);}
+        }
 }
 ?>
