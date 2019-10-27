@@ -26,17 +26,23 @@
                 <?php
                         if (isset($_POST['rowA'])){
                             require_once('Array.php'); // załadowanie osobnego pliku z szablonem macierzy
+                            include_once('Maths.php'); // Odklejenie pliku z działaniami na macierzach od głównego pliku
+
                             $rowA = $_POST['rowA'];    //
                             $colA = $_POST['colA'];    //   Pobranie danych 
                             $rowB = $_POST['rowB'];    //
                             $colB = $_POST['colB'];    // 
                         
-                            $matA = new Matrix($rowA , $colA);       // Stworzenie macierzy A z podanymi parametrami
-                            $matB= new Matrix2($rowB , $colB);      // Stworzenie macierzy B z podanymi parametrami
+                            $matA = new Matrix($rowA , $colA, 'A');       // Stworzenie macierzy A z podanymi parametrami
+                            $matB= new Matrix($rowB , $colB, 'B');      // Stworzenie macierzy B z podanymi parametrami
                             $matrixArrayA = $matA->CreateMatrix();    // wywołanie macierzy A
                             $matrixArrayB = $matB->CreateMatrix();   // wywołanie macierzy B
 
-                            include_once('Maths.php'); // Odklejenie pliku z działaniami na macierzach od głównego pliku
+                            $maths = new Actions ($matrixArrayA, $matrixArrayB);
+                            $maths->Addmatrix();
+                            $maths->SubMatrix();
+                            $maths->MultMatrix();
+                            $maths->DetMatrix();
                         }
                 ?>
                     </div>
