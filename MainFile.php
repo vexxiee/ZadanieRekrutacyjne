@@ -33,16 +33,16 @@
                             $rowB = $_POST['rowB'];    //
                             $colB = $_POST['colB'];    // 
                         
-                            $matA = new Matrix($rowA , $colA, 'A');       // Stworzenie macierzy A z podanymi parametrami
-                            $matB= new Matrix($rowB , $colB, 'B');      // Stworzenie macierzy B z podanymi parametrami
-                            $matrixArrayA = $matA->CreateMatrix();    // wywołanie macierzy A
-                            $matrixArrayB = $matB->CreateMatrix();   // wywołanie macierzy B
+                            $matA = new Matrix($rowA , $colA, 'A');       // Stworzenie obiektu macierzy A z podanymi parametrami
+                            $matB= new Matrix($rowB , $colB, 'B');      // Stworzenie obiektu macierzy B z podanymi parametrami
+                            $matrixArrayA = $matA->CreateMatrix();    // wywołanie metody dla obiektu macierzy B
+                            $matrixArrayB = $matB->CreateMatrix();   // wywołanie metody dla obiektu macierzy B
 
-                            $maths = new Actions ($matrixArrayA, $matrixArrayB);
-                            $maths->Addmatrix();
-                            $maths->SubMatrix();
-                            $maths->MultMatrix();
-                            $maths->DetMatrix();
+                            $maths = new Actions ($matrixArrayA, $matrixArrayB); // utworzenie obiektu z działaniami
+                            $maths->Addmatrix(); // wywołanie metody dla obiektu
+                            $maths->SubMatrix(); // wywołanie metody dla obiektu
+                            $maths->MultMatrix(); // wywołanie metody dla obiektu
+                            $maths->DetMatrix(); // wywołanie metody dla obiektu
                         }
                 ?>
                     </div>
