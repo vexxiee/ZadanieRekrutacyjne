@@ -27,22 +27,42 @@
                         if (isset($_POST['rowA'])){
                             require_once('Array.php'); // załadowanie osobnego pliku z szablonem macierzy
                             include_once('Maths.php'); // Odklejenie pliku z działaniami na macierzach od głównego pliku
-
+                            include_once('DisplayMatrices.php');
                             $rowA = $_POST['rowA'];    //
                             $colA = $_POST['colA'];    //   Pobranie danych 
                             $rowB = $_POST['rowB'];    //
                             $colB = $_POST['colB'];    // 
                         
-                            $matA = new Matrix($rowA , $colA, 'A');       // Stworzenie obiektu macierzy A z podanymi parametrami
-                            $matB= new Matrix($rowB , $colB, 'B');      // Stworzenie obiektu macierzy B z podanymi parametrami
-                            $matrixArrayA = $matA->CreateMatrix();    // wywołanie metody dla obiektu macierzy B
-                            $matrixArrayB = $matB->CreateMatrix();   // wywołanie metody dla obiektu macierzy B
+                            $matA = new Matrix($rowA , $colA);       // Stworzenie macierzy A z podanymi parametrami
+                            $matB = new Matrix($rowB , $colB);      // Stworzenie macierzy B z podanymi parametrami
 
-                            $maths = new Actions ($matrixArrayA, $matrixArrayB); // utworzenie obiektu z działaniami
-                            $maths->Addmatrix(); // wywołanie metody dla obiektu
-                            $maths->SubMatrix(); // wywołanie metody dla obiektu
-                            $maths->MultMatrix(); // wywołanie metody dla obiektu
-                            $maths->DetMatrix(); // wywołanie metody dla obiektu
+                            $maths = new Maths ($matA->GetArray(), $matB->GetArray(), $matA->GetNumRows(), $matB->GetNumRows(), $matA->GetNumCols(), $matB->GetNumCols()); 
+                            
+                            $MatrixA = new DispalyMatricesMain($matA->GetArray(), 'Matrix A');
+                            $MatrixB = new DispalyMatricesMain($matB->GetArray(), 'Matrix B');
+
+                            if ($rowA==$rowB && $colA==$colB){
+                                $AddingM = new DispalyMatrices($maths->AddMatrix(), 'Adding Result');
+                                echo "</br>";
+                                $SubtractionM = new DispalyMatrices($Subtraction = $maths->SubMatrix(), 'Subtraction Result');
+                            }else{
+                                echo "<div id='error'></br>Inoperative matrix size for adding and subtracting</div></br>";
+                            }
+                            if($colA == $rowB){
+                                echo "</br>";
+                                $MultiplyM = new DispalyMatrices($Multiply = $maths->MultMatrix(), 'Multiplying Result');
+                            }else{
+                                echo "<div id='error'></br>Inoperative matrix sizes for multiplying</div>";
+                            }
+                            if($rowA == 2 && $rowB == 2 && $colA == 2 && $colB == 2){
+                                echo "</br>Determinant for matrix A = <b>".$maths->DetMatrix2A()."</b>";
+                                echo "</br>Determinant for matrix B = <b>".$maths->DetMatrix2B()."</b>";
+                            }else if($rowA == 3 && $rowB == 3 && $colA == 3 && $colB == 3){
+                                echo "</br>Determinant for matrix A = <b>".$maths->DetMatrix3A()."</b>";
+                                echo "</br>Determinant for matrix B = <b>".$maths->DetMatrix3B()."</b>";
+                            }else{
+                                echo "<div id='error'></br>Inoperative matrix sizes for determing determinant</div>";
+                            }
                         }
                 ?>
                     </div>
