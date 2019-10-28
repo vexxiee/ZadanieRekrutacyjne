@@ -1,5 +1,5 @@
 <?php 
-
+// Powodem utworzenia dwóch osobych klas jest formatowanie dla tabel mainTable i resultTable
 class DispalyMatricesMain{
 
 
