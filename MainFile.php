@@ -46,7 +46,7 @@
                                 echo "</br>";
                                 $SubtractionM = new DispalyMatrices($Subtraction = $maths->SubMatrix(), 'Subtraction Result');
                             }else{
-                                echo "<div id='error'></br>Inoperative matrix size for adding and subtracting</div></br>";
+                                echo "<div id='error'></br>Inoperative matrix size for adding and subtracting</div>";
                             }
                             if($colA == $rowB){
                                 echo "</br>";
